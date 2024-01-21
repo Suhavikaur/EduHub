@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="course1.css" />
+  </head>
+  <body>
+    <div class="tabs-container">
+      <div class="tab-btns">
+        <div class="tab-btn active" data-tab="basic">Basic</div>
+        <div class="tab-btn" data-tab="standard">Standard</div>
+        <div class="tab-btn" data-tab="premium">Premium</div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="basic">
+          <div class="plan">Basic</div>
+
+          <div class="name-price">
+            <div class="name">HTML + CSS + JS</div>
+            <div class="price">$6</div>
+          </div>
+
+          <div class="brief">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, veritatis!
+          </div>
+
+          <ul class="features">
+            <li class="feature included">Included source code files</li>
+
+            <li class="feature not-included">
+              Certificate of Completion
+            </li>
+          </ul>
+
+          <button class="atc" type="button">Add to cart</button>
+        </div>
+
+        <div class="tab" data-tab="standard">
+          <div class="plan">Standard</div>
+
+          <div class="name-price">
+            <div class="name">HTML + CSS + JS(React, MERN Stack)</div>
+            <div class="price">$12</div>
+          </div>
+
+          <div class="brief">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, nobis!
+          </div>
+
+          <ul class="features">
+            <li class="feature included">Included source code files</li>
+
+            <li class="feature included">Certificate of Completion</li>
+          </ul>
+<a href="home.html">
+          <button class="atc" type="button">Add to cart</button></a>
+        </div>
+
+        <div class="tab" data-tab="premium">
+          <div class="plan">Premium</div>
+
+          <div class="name-price">
+            <div class="name">HTML + CSS + JS(React, MERN Stack) + AWS</div>
+            <div class="price">$18</div>
+          </div>
+
+          <div class="brief">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, et!
+          </div>
+
+          <ul class="features">
+            <li class="feature included">Included source code files + GitHub Tutorial</li>
+
+            <li class="feature included">Certificate of Completion</li>
+          </ul>
+
+          <button class="atc" type="button">Add to cart</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabs = document.querySelectorAll(".tab");
+
+      tabBtns.forEach((btn) => {
+        // toggle buttons active class
+        btn.addEventListener("pointerdown", function () {
+          tabBtns.forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+
+          // data type selected
+          const tabType = this.dataset.tab;
+
+          tabs.forEach((tab) => {
+            if (tab.dataset.tab == tabType) {
+              // tab.style.opacity = 1;
+              tab.classList.add("active");
+            } else {
+              // tab.style.opacity = 0;
+              tab.classList.remove("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
